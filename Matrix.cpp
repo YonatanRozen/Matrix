@@ -105,7 +105,8 @@ Matrix& Matrix::operator*=(const Matrix& other) {
             }
         }
     }
-    return (*this = res);
+    *this = res;
+    return *this;2
 }
 
 Matrix& Matrix::operator*=(double scalar) {

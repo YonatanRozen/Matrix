@@ -23,4 +23,5 @@ int main() {
     }
 
     cout << A << endl;
-}
+
+    cout << A.operator*=(A*4) << endl;}
