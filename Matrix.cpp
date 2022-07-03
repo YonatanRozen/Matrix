@@ -96,17 +96,15 @@ Matrix& Matrix::operator*=(const Matrix& other) {
         throw InvalidDimensions();
     }
     Matrix res(this->row, other.col);
-    int val;
     for (int i = 0; i < res.row; ++i) {
-        for (int j = 0; j < other.col; ++j) {
-            val = 0;
-            for (int k = 0; k < res.col; ++k) {
-                this->matrix[i][j] += this->matrix[i][k] * other.matrix[k][j];
+        for (int j = 0; j < res.col; ++j) {
+            for (int k = 0; k < other.row; ++k) {
+                res.matrix[i][j] += this->matrix[i][k] * other.matrix[k][j];
             }
         }
     }
     *this = res;
-    return *this;2
+    return *this;
 }
 
 Matrix& Matrix::operator*=(double scalar) {
@@ -177,6 +175,9 @@ Matrix Matrix::transpose(){
     }
     return temp;
 }
+
+
+
 
 
 

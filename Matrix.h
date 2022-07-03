@@ -34,7 +34,7 @@ private:
 
 Matrix operator+(const Matrix&, const Matrix&);
 Matrix operator-(const Matrix&, const Matrix&);
-Matrix operator*(const Matrix&);
+Matrix operator*(const Matrix&, const Matrix&);
 Matrix operator*(const Matrix&, double);
 Matrix operator*(double, const Matrix&);
 

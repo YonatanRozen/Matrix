@@ -6,22 +6,22 @@ using std::cin;
 using std::endl;
 
 int main() {
-    int row, col;
-    cout << "Enter the number of matrix rows:" << endl;
-    cin >> row;
-    cout << "Enter the number of matrix columns:" << endl;
-    cin >> col;
-    Matrix A = Matrix(row, col);
-
-    int val;
-    for (int i = 0; i < row; ++i) {
-        for (int j = 0; j < col; ++j) {
-            cout << "Enter element: " << endl;
-            cin >> val;
-            A.setElement(val, i, j);
+    double mat1[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    double mat2[3][4] = {{1,2,3,4},
+                         {5,6,7,8},
+                         {9,10,11,12}};
+    Matrix m = Matrix(3,3);
+    Matrix f = Matrix(3,4);
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; ++j) {
+            m.setElement(mat1[i][j], i, j);
         }
     }
-
-    cout << A << endl;
-
-    cout << A.operator*=(A*4) << endl;}
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            f.setElement(mat2[i][j], i, j);
+        }
+    }
+    cout << m*f<< endl;
+    return 0;
+}
